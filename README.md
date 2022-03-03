@@ -2,7 +2,7 @@
 General repository consisting of all coding challenges, readme contains brief summarys of what each challenge entails
 
 
-Animal Actions
+## Animal Actions
 Date Completed: 2-10-2022
 
 Animal Actions was part of a coding interview for a job.
