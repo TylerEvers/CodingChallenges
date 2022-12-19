@@ -13,18 +13,17 @@ namespace CodingChallenges.ClockAngles
             Console.WriteLine("Enter minutes: ");
             int minutes = Convert.ToInt16(Console.ReadLine());
 
-            //Calculate hand values - base 60
-            TimeSpan startTime = new TimeSpan(hours, minutes, 0);
-            var hourHand = startTime.Hours % 12;
-            var minuteHand = startTime.Minutes;
+            //Calculate hand values - base 360
+            var hourHand = ((hours % 12) * 30) + ((double)minutes/(double)60*30);
+            var minuteHand = minutes * 6;
 
             //Calculate shorter angle
-            var diff = Math.Abs((minuteHand - (hourHand * 5)));
-            if (diff > 30)
+            var diff = Math.Abs(minuteHand - hourHand);
+            if (diff > 180)
             {
-                diff = 60 - diff;
+                diff = 360 - diff;
             }
-            var angle = diff * 6;
+            var angle = diff;
 
             Console.WriteLine("The angle between the hands is: " + angle);
         }
