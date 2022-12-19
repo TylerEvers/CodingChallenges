@@ -17,6 +17,3 @@ Date Completed: 12-14-2022
 
 The Clock Angle problem was a question a friend encountered in an interview.
 Given two integers, an hour and a minute, write a function to calculate the angle between the two hands on a clock representing that time.
-
-TODO: In validating my work I realized there is another parameter I am currently not solving for, as the minute hand moves around the face of the clock the hour hand transitions to the next hour.
-I need to revisit the problem to account for this change when calculating the angle as 12:30 would technically be closer to 165 instead of 180.
