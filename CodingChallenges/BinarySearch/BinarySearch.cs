@@ -7,7 +7,7 @@ namespace CodingChallenges.BinarySearch
         internal static void BinarySearch()
         {
             //Set-up Array and Value to Search
-            var bogusGenerator = new BogusModelGenerators();
+            var bogus = new BogusModelGenerators();
 
             var array = bogus.Array_CreateIntArray(10);
             var value = bogus.Array_GetRandomValue(array);
