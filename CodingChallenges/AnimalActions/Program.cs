@@ -1,9 +1,5 @@
 ﻿using AnimalActionsChallenge;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodingChallenges.AnimalActions
 {
@@ -12,7 +8,7 @@ namespace CodingChallenges.AnimalActions
         internal static void AnimalActions()
         {
             //Animal Actions Challenge
-            Parrot parrot = new();
+            Parrot parrot = new Parrot();
 
             Console.WriteLine("Parrot");
             parrot.OutputEat();
@@ -20,7 +16,7 @@ namespace CodingChallenges.AnimalActions
             parrot.OutputSwim();
             parrot.OutputSound();
 
-            Penguin penguin = new();
+            Penguin penguin = new Penguin();
 
             Console.WriteLine("Penguin");
             penguin.OutputEat();
@@ -28,7 +24,7 @@ namespace CodingChallenges.AnimalActions
             penguin.OutputSwim();
             penguin.OutputSound();
 
-            Pterodactyl pterodactyl = new();
+            Pterodactyl pterodactyl = new Pterodactyl();
 
             Console.WriteLine("Pterodactyl");
             pterodactyl.OutputEat();
@@ -36,7 +32,7 @@ namespace CodingChallenges.AnimalActions
             pterodactyl.OutputSwim();
             pterodactyl.OutputSound();
 
-            Duck duck = new();
+            Duck duck = new Duck();
 
             Console.WriteLine("Duck");
             duck.OutputEat();
