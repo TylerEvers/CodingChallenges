@@ -1,31 +1,44 @@
 ﻿using Bogus;
+using System;
 using System.Linq;
 
-    public interface IBogusModelGenerator
+public interface IBogusModelGenerator
+{
+    int[] Array_CreateIntArray(int size);
+    T Array_GetRandomValue<T>(T[] array);
+}
+
+public class BogusModelGenerators : IBogusModelGenerator
+{
+
+private readonly Faker _faker;
+
+    public BogusModelGenerators()
     {
-        int[] Array_CreateIntArray(int size);
-        int Array_GetRandomValue(int[] intArray);
+        _faker = new Faker();
     }
 
-    public class BogusModelGenerators : IBogusModelGenerator
+    public int[] Array_CreateIntArray(int size)
     {
-    
-    private readonly Faker _faker;
+        var array = new int[size];
+        int value = 0;
 
-        public BogusModelGenerators()
+        for (int i = 0; i < size; i++)
         {
-            _faker = new Faker();
+            while (array.Contains(value))
+            {
+                value = _faker.Random.Int(0, 100);
+            }
+            array.SetValue(value, i);
         }
 
-        public int[] Array_CreateIntArray(int size)
-        {
-            return _faker.Random.Digits(size).OrderBy(x => x).ToArray();
-            
-        }
-
-        public int Array_GetRandomValue(int[] intArray)
-        {
-            var faker = new Faker();
-            return _faker.Random.ArrayElement(intArray);
-        }
+        Array.Sort(array);
+        return array;      
     }
+
+    public T Array_GetRandomValue<T>(T[] array)
+    {
+        var faker = new Faker();
+        return _faker.Random.ArrayElement(array);
+    }
+}
